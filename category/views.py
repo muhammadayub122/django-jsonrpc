@@ -5,6 +5,9 @@ import json
 from django.http import JsonResponse
 from .models import  Category
 
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
 
 def json_rpc_view(request):
     try:

@@ -4,7 +4,9 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Cart, CartItem
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def json_rpc_view(request):
     try:
         data = json.loads(request.body)

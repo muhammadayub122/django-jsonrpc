@@ -5,10 +5,9 @@ from django.shortcuts import render
 
 from cart.models import Cart
 from order.models import Order
+from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
-  # -------- ORDER --------
-  
+@csrf_exempt
 def json_rpc_view(request):
     try:
         data = json.loads(request.body)
